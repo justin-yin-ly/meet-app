@@ -5,6 +5,7 @@ The Meet App is a web application that allows users to view details about events
 ## Using This App
 
 ## Links
+[Live App](https://justin-yin-ly.github.io/meet-app/)
 
 ## Dependencies
 
