@@ -43,3 +43,6 @@ As a user, I should be able to install the app as a shortcut to  my home screen 
 As a user, I should be able to display event details as a chart so that I can visualize event data easier.
 
 **Scenario 1:** Given the user is viewing event details, when the user clicks the option for a chart display, then the app will visualize upcoming events for each city in a chart.
+
+## Application of Serverless Functions
+Much of what the Meet App sets out to accomplish lends itself well to leveraging the usage of serverless functions in order to efficiently achieve its goals. Without serverless functions, I would need to set up a large amount of backend infrastructure that could very well take ten times the amount of work and time than if I had just used the available services. OAuth authorization allows me to easily handle the server logic necessary to give users a personalized experience, while also allowing usage of the Google Calendar API to conveniently retrieve and display event information. AWS and its offered library of technologies provides the opportunity to create a fully realized app with features such as personalized recommendations, notifications, and more. Bundled with all this is the benefit of app scalability and well-maintained infrastructure that I don't need to maintain myself.
