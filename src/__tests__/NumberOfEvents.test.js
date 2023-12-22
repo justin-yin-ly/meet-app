@@ -1,6 +1,8 @@
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import NumberOfEvents from "../components/NumberOfEvents";
+import App from "../App";
+import { screen } from "@testing-library/react";
 
 describe('<NumberOfEvents /> component', () => {
     let NumberOfEventsComponent;
@@ -23,5 +25,10 @@ describe('<NumberOfEvents /> component', () => {
         const user = userEvent.setup();
         await user.type(eventsNumTextbox, '{backspace}{backspace}10');
         expect(eventsNumTextbox).toHaveValue('10')
+    });
+
+    test('renders learn react link', async () => {
+        const linkElement = await screen.findByTestId("event-num-input");
+        expect(linkElement).toBeInTheDocument();
     });
 });

@@ -1,6 +1,8 @@
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { screen } from '@testing-library/react';
 import CitySearch from '../components/CitySearch';
+import App from '../App';
 import { extractLocations, getEvents } from '../api';
 
 describe('<CitySearch /> component', () => {
@@ -68,5 +70,12 @@ describe('<CitySearch /> component', () => {
     await user.click(BerlinGermanySuggestion);
 
     expect(cityTextBox).toHaveValue(BerlinGermanySuggestion.textContent);
+  });
+
+  test('renders learn react link', async () => {
+    //render(<App />); - seems like this was causing multiple instances of the CitySearch component to be rendered. 
+    // I was getting an error during testing that said something like 'multiple instances of city-search-input found'
+    const linkElement = await screen.findByTestId("city-search-input");
+    expect(linkElement).toBeInTheDocument();
   });
 });

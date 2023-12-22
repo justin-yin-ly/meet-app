@@ -28,6 +28,7 @@ const CitySearch = ({allLocations}) => {
         <input
             type="text"
             className="city"
+            data-testid="city-search-input"
             placeholder="Search for a city"
             value={query}
             onFocus={() => setShowSuggestions(true)}
