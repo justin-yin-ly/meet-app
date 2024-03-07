@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { extractLocations, getEvents } from './api';
 import './App.css';
 
-function App() {
+const App = () => {
   const [events, setEvents] = useState([]);
   const [currentNOE, setCurrentNOE] = useState(32);
   const [allLocations, setAllLocations] = useState([]);
@@ -22,12 +22,12 @@ function App() {
 
   useEffect(() => {
     fetchData();
-  }, [currentCity]);
+  }, [currentCity, currentNOE]);
 
   return (
     <div className="App">
       <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity}/>
-      <NumberOfEvents />
+      <NumberOfEvents setCurrentNOE={setCurrentNOE}/>
       <EventList events={events}/>
     </div>
   );
