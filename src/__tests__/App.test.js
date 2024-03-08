@@ -67,4 +67,19 @@ describe('<App /> integration', () => {
 
     expect(allRenderedEventItems.length).toBe(10);
   });
+
+  test('filters event list without using getEvents', async () => {
+    const user = userEvent.setup();
+    const AppComponent = render(<App />);
+    const AppDOM = AppComponent.container.firstChild;
+
+    const mockGetEvents = jest.fn(getEvents)
+
+    const NOEDOM = AppDOM.querySelector('#number-of-events');
+    const NOEInput = within(NOEDOM).queryByRole('textbox');
+
+    await user.type(NOEInput, "{backspace}{backspace}1");
+
+    expect(mockGetEvents.mock.calls).toHaveLength(0)
+  })
 });
