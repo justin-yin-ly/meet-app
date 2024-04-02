@@ -30,7 +30,7 @@ const App = () => {
   }
 
   useEffect(() => {
-    if (navigator.online) {
+    if (navigator.onLine) {
       setWarningAlert("");
     }
     else {
