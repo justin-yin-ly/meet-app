@@ -3,12 +3,21 @@
 The Meet App is a web application that allows users to view details about events and manage ones they're curious about. Users are able to filter events by city, view event details, specify the amount of events they want to see, use the app even when offline, install the app as a shortcut to their homescreen, and display events through a chart view.
 
 ## Using This App
+When first visiting the website, the app will take a second to load, after which, it will request that the user logs into a Google account through Google's OAuth authorization. After logging in, the user will be able to view events, view an event's details, specify an amount of events to view, and filter events by city.
 
 ## Links
 [Live App](https://justin-yin-ly.github.io/meet-app/)
 
 ## Dependencies
-
+* React
+* AWS Lambda
+* Google Calendar API
+* Jest
+* Jest Cucumber
+* Puppeteer
+* Atatus
+* Recharts
+  
 ## Features/User Stories
 
 ### Feature 2: Show/Hide Event Details
